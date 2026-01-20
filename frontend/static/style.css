@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f4f7;
+}
+
+.container {
+    width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.upload-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.upload-box input {
+    padding: 8px;
+}
+
+.upload-box button {
+    padding: 8px 15px;
+    cursor: pointer;
+    background: #4a7dfc;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.clear-btn {
+    background: #d9534f !important;
+}
+
+.section {
+    background: white;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.output {
+    background: #fafafa;
+    border: 1px solid #ddd;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 5px;
+    height: auto;
+    min-height: 80px;
+    white-space: pre-wrap;     /* <<< LINE BREAK FIX */
+    word-wrap: break-word;     /* Wrap long text */
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+#status {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.status-error {
+    color: red;
+}
