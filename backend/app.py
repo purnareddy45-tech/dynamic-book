@@ -9,9 +9,6 @@ from utils.question_bank import generate_questions
 
 app = FastAPI()
 
-# ----------------------------
-# CORS SETTINGS
-# ----------------------------
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -20,16 +17,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# ----------------------------
-# HEALTH CHECK
-# ----------------------------
 @app.get("/")
 def home():
     return {"message": "Backend is running!"}
 
-# ----------------------------
-# FILE PROCESS ENDPOINT
-# ----------------------------
 @app.post("/process-file/")
 async def process_file(file: UploadFile = File(...)):
     print("Filename:", file.filename)
@@ -40,13 +31,9 @@ async def process_file(file: UploadFile = File(...)):
 
     text = extract_text(file_bytes)
 
-    summary = generate_summary(text)
-    notes = generate_notes(text)
-    flashcards = generate_flashcards(text)
-    questions = generate_questions(text)
-
     return {
-        "summary": summary,
-        "notes": notes,
-        "flashcards": flashcards,
-        "questions": questions    }
+        "summary": generate_summary(text),
+        "notes": generate_notes(text),
+        "flashcards": generate_flashcards(text),
+        "questions": generate_questions(text),
+    }
