@@ -2,7 +2,7 @@ from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
 # ✅ Correct imports (VERY IMPORTANT)
-from backend.utils.extractor import extract_text
+from utils.extractor import extract_text
 from backend.utils.summarizer import generate_summary
 from backend.utils.notes_generator import generate_notes
 from backend.utils.flashcard_generator import generate_flashcards
